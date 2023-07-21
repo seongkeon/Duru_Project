@@ -96,5 +96,9 @@ public class TaxController {
         return "homeBus";
     }
 
+    @GetMapping
+    public String abc("adfa"){
+        tServ.addTaxBookInfo();
+    }
 }
 
