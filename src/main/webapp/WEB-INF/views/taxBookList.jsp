@@ -220,7 +220,7 @@
     <div id="outputLocation" style="display: flex; align-items: center;">
       <c:choose>
         <c:when test="${empty taxInfo.current_loc}">
-          <c:out value="현재 호출한 택시가 없습니다." />
+          <c:out value="현재 호출한 이용객이 없습니다." />
         </c:when>
         <c:otherwise>
           <c:out value="${taxInfo.current_loc}" />
@@ -234,7 +234,7 @@
     <div id="outputDestination" style="display: flex; align-items: center;">
       <c:choose>
         <c:when test="${empty taxInfo.destination}">
-          <c:out value="현재 호출한 택시가 없습니다." />
+          <c:out value="현재 호출한 이용객이 없습니다." />
         </c:when>
         <c:otherwise>
           <c:out value="${taxInfo.destination}" />

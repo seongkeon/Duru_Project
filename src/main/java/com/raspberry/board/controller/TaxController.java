@@ -58,8 +58,10 @@ public class TaxController {
         String uid  = (String) session.getAttribute("uid");
         TaxBookDto taxbook = tServ.getTaxBookInfo(uid);
         //기사 정보
-        TaxMemberDto tMember = tServ.getTaxMember(taxbook.getTid());
-        model.addAttribute("taxMember", tMember);
+        if(taxbook != null) {
+            TaxMemberDto tMember = tServ.getTaxMember(taxbook.getTid());
+            model.addAttribute("taxMember", tMember);
+        }
         model.addAttribute("taxInfo", taxbook);
         return "taxCheck";
     }
@@ -70,8 +72,10 @@ public class TaxController {
         log.info("taxBookList()");
         String tid  = (String) session.getAttribute("tid");
         TaxBookDto taxbook = tServ.getTaxBook(tid);
-        TaxMemberDto tMember = tServ.getTaxMember(taxbook.getTid());
-        model.addAttribute("taxMember", tMember);
+        if(taxbook != null) {
+            TaxMemberDto tMember = tServ.getTaxMember(taxbook.getTid());
+            model.addAttribute("taxMember", tMember);
+        }
         model.addAttribute("taxInfo", taxbook);
         return "taxBookList";
     }
